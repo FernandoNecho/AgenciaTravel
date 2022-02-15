@@ -105,7 +105,7 @@ export function Facturacion(){
 
                     default:{
                         alert("Ingreso un opcion incorrecta, las cuotas son [1-3-6-9-12]");
-                        preCarga();
+                        
                         }
                 } 
                 return true;              
@@ -162,16 +162,9 @@ export function Facturacion(){
                                 <p>Los calculos fueron hechos en base a la siguiente cantidad de pasajeros: <b>${this.pasajeros}</b></p>
                                 <p>El equipo de Travel les agradece por confiar en nosotros y les desea un feliz viaje</p>
                             </div>
-                            <a href="../index.html" class="btn btn-dark">Volver...</a>`
+                            <a href="#/" class="btn btn-dark">Volver...</a>`
         }
     }
-
-
-    /***********
-     * se invoca  usando carga el dom
-     * levanta los datos de la promocion que se hizo click 
-     * la muestra en pantalla junto con los formularios de compra
-     */
 
 
     // adhiero al boton calcular cuotas al listener

@@ -71,7 +71,7 @@ export function formCompra(props){
                     <label for="expiration">Vencimiento</label>
                     <input type="date" name="" id="expiration" name="Expiration" required>
                     <label for="cod">Cod. Seguridad</label>
-                    <input type="text" id="cod" placeholder="xyz" name="codigo" pattern=".{3}$" required title= "El codigo Consta de 3 digitos"><br>
+                    <input type="text" id="cod" placeholder="xyz" name="codigo" pattern="^([\\d*]{3})$" required title= "El codigo Consta de 3 digitos"><br>
                 </fieldset>
                         
                         
