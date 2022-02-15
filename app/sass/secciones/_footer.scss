@@ -1,0 +1,76 @@
+/*---------FOOTER-------*/
+.gridFooter{
+    grid-area: footer;
+    display: grid;
+    grid-template-areas:    "titulo titulo"
+                            "contacto redes";
+                            
+    color:$c-primary;
+    background-color: $bc-primary;
+
+    @include tablet{
+        grid-area: footer;
+    
+        grid-template-areas:    "titulo"
+                                "contacto"
+                                "redes";
+        grid-template-columns: 100%;
+        color:$c-primary;
+        background-color: black;
+
+        &__linkRedes{
+            justify-content: center;
+        }
+    }
+
+    &__subTitle{
+        grid-area: titulo;
+        font-size: 2rem;
+        font-family: $font-primary;
+        font-weight: 700;
+        letter-spacing: .4rem;
+        &::first-letter{
+            background-color: orangered;
+            padding-left: .3rem;
+        }
+
+        @include movil{
+            font-size: 1.6rem;
+        }
+    }
+    &__contacto{
+        grid-area: contacto;
+        &--correo{
+            text-decoration:none;
+            color: $c-primary;
+            margin:0 5%;
+        }
+    }
+    &__linkRedes{
+        grid-area: redes;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 1%;
+
+        @include movilS{
+                justify-content: space-evenly;
+                padding: 2% 0;
+        }
+
+        a{
+            text-decoration: none; 
+            color: $c-primary; 
+            margin-right: 2%; 
+            font-size: 1.4rem;
+
+            &:hover{
+                transform: scale(1.5,1.5);
+            }
+        }
+    }   
+
+
+}
+

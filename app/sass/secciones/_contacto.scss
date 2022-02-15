@@ -1,0 +1,202 @@
+/*------------------------------------*/
+/*--------Formulario de contacto-----*/
+
+//disposicion del formulario 2 columnas
+#frmContacto{
+    width: 100%;
+    grid-area: sectionPromo;
+    display: grid;
+    grid-template-columns: 40% 30%;
+    justify-content: center;
+    background-image: url('../img/alpesSuizos.jpg');
+    background-position: center;
+    background-size: cover;
+
+    @include tablet{
+        grid-template-columns: 100%;
+    }
+
+    @include movil{
+        grid-template-columns: 100%;
+    }
+
+}
+
+.font{
+    font-family: $font-secundary;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-align: center;
+    
+}
+
+.formulario{
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//estilos primer columna Formulario
+.form{
+    width: 100%;
+    padding: 0rem 1rem;
+    &__label{
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        text-align: center;
+        color: white;
+        font-size: 1.2rem;
+
+        @include tablet{
+            font-size: 1.2rem;
+        }
+    }
+
+    &__subtitle{
+        background-color: transparent;
+        text-decoration-line: underline;
+        
+        &::first-letter{
+            background-color: orangered;
+            padding-left: 1rem;
+            letter-spacing: .4rem;
+        }
+        @include movil{
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    &__inputText{
+        display: flex !important;
+        flex-direction: column !important;
+        place-items: center;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    &__input{
+        width: 80%;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.6);
+        height: 2rem;
+        text-align: center;
+        color: white;
+        font-size: 1rem;
+        @include tablet{
+            width: 70%
+        }
+
+        @include movil{
+            width: 80%;
+        }
+    }
+    
+    &__label{
+        @extend .font;
+    }
+
+    &__terminos{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        @include tablet{
+            justify-content: center;
+        }
+    }
+
+    &__comentarios{
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        margin-bottom: 1rem;
+        legend{
+            font-size: 1rem;
+        }
+
+        @include tablet{
+            width: 70%;
+        }
+
+        @include movil{
+            width: 80%;
+        }
+    }
+    
+    &__selDestinos{
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+
+    &__btnForm{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 1rem;
+
+        @include tablet{
+            justify-content: center;
+            
+        }
+        
+        &--btn{
+            padding: .5rem;
+            font-family: $font-secundary;
+            font-size: 1rem;
+            font-weight: 400;
+
+            &:hover{
+                background-color: rgb(161, 161, 161);
+            }
+        }
+    }   
+}
+
+//estilos segunda columna
+.contact{
+    
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4,10%) 50%;
+    align-items: start;   
+
+    padding: 0 1rem;
+
+    @include tablet{
+        padding: 0;
+        grid-template-rows: 16% repeat(3,12%) 48%;
+        height: 80vh;
+    }
+    h2{
+        text-align: center;
+        text-decoration-line:underline;
+        background-color: transparent;
+        color: black;
+
+
+        &::first-letter{
+            background-color: orangered;
+        }
+    }
+    span{
+        @extend .font;
+    }
+
+    &__maps{
+        width: 90%;
+        height: 100%;
+        justify-self: center;
+
+        @include tablet{
+            height: 90%;
+        }
+    }
+}

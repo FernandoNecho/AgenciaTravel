@@ -1,0 +1,59 @@
+/*----------Menu Principal---------*/
+#navbarNav{
+    justify-content: center;
+}
+
+
+.navbar{
+    grid-area: nav;
+    position: sticky !important;
+    
+    top: 0;
+    z-index: 100 !important ;
+    border-top: 1px solid gray;
+    border-bottom: 2px solid gray;
+    background-color: $bc-secundary!important;
+
+    .container-fluid{ //posiciono Boton hamburguer a la derecha
+        justify-content: flex-end;
+        margin-right: 1%;
+    }
+
+    @include tablet{
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    &__ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $bc-secundary;
+        list-style: none;     
+    }
+
+    &__li{
+        border: 3px solid transparent;
+        text-align: center;
+        transition: all .7s;
+        &:hover{
+            border-bottom: 3px solid grey;
+        }
+    }
+
+    &__a{
+        color: gray !important;
+        font-family: $font-secundary;
+        text-decoration: none;
+        padding: .2rem .3rem;
+        
+        font-size: 1.2rem;
+        @include movilS{
+            font-size: 1.2rem;
+        }
+    }
+
+   
+}
+
+/*-------------Fin Menu------------------*/

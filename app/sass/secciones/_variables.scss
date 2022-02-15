@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+$font-primary:'Amatic SC', 'Times New Roman';
+$font-secundary:'Roboto', sans-serif;
+$bc-primary:rgb(26, 179, 171);
+$bc-secundary:rgb(35, 223, 213);
+$c-primary:white;
+
+img{
+    max-width: 100%;
+    height: auto;
+}

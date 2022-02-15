@@ -1,0 +1,85 @@
+    /*---Titulos---*/
+    //Clase para los titulos que espues heredan con @extend
+    .title{
+        background-color: $bc-primary;
+        color: $c-primary;
+        text-align: center;
+        font-family: $font-primary; /*--Amatic SC tomada de google font--*/
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        z-index: 10;
+        padding: 1rem 0 !important;
+    }
+
+    //Clase para la primer letra de los titulos H1 y H4
+    .letter{
+        letter-spacing: 1rem;
+        background-color: transparent;
+        &::first-letter{
+        background-color: orangered;
+        font-size: 100%;
+        padding-left: 1rem;
+        }
+    }
+
+    //se aplican las clases(title y letter) a los titulos
+    @for $i from 1 to 5 {
+        h#{$i}{//estilos para todos los title Hx;
+            @extend .title;
+
+            @if $i>1 and $i<4{              
+                font-size: 1.3rem;   
+                font-family: $font-secundary;   
+                font-weight: 400;  
+                letter-spacing: 0;       
+
+            }@else{
+                @extend .letter;
+                font-size: 2.5rem;
+                
+            }
+            
+        }
+    }
+    
+    
+     
+    /*-------------------------------*/
+
+    
+
+
+.loader{
+    margin: 1rem auto;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+}
+
+.error{
+    background-color: red;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.errorInput{
+    background-color: red;
+    color: white;
+    padding: .5rem;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.none{
+    display: none;
+}
+
+.isActive{
+    display: block;
+}
+
