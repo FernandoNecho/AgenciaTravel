@@ -18,10 +18,9 @@ export function Validate(){
         if(e.target.matches("input[required]")){
             let $input = e.target;
             let pattern = $input.pattern || $input.dataset.pattern;
-            console.log(pattern)
+
             if(pattern){
                 let regex = new RegExp(pattern);
-                console.log($input.name);
                 return !regex.exec($input.value) ? document.getElementById($input.name).classList.add("isActive"): document.getElementById($input.name).classList.remove("isActive");
             }
 

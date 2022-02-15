@@ -8,19 +8,32 @@ export function Contacto(){
     $contacto.id="frmContacto";
 
     $(()=>{
+
         $("#submitContact").on("click", (e)=>{
             e.preventDefault();
-            $("form input[type=text] , form textarea").each(function() { 
-                if(this.value === '') return
-                else{
-                    $("#frmContacto").append("<span class='errorInput'>Mensaje enviado con exito</span>");
-                    $(".errorInput").fadeOut(6000);      
-                    
-                    $(".form")[0].reset();
-                }
-            });
-            
-        })
+            let d = document,
+            name=d.getElementById("nombre"),
+            lastname= d.getElementById("apellido"),
+            email= d.getElementById("mail"),
+            phone = d.getElementById("telefono");
+
+            const namePattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\\s]+.{1,15}(.[^0-9])$";
+            const emailPattern="^[a-z0-9]+(\\.[_a-z0-9]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,15})$";
+            const phonePattern = ".{6,20}$"
+
+            let regex= new RegExp(namePattern),
+            emailRegex= new RegExp(emailPattern),
+            phoneRegex= new RegExp(phonePattern);
+
+            if(!regex.exec(name.value) || !regex.exec(lastname.value) || !emailRegex.exec(email.value) || !phoneRegex.exec(phone.value)){
+                return
+            }
+            else{
+                $("#frmContacto").append("<span class='errorInput'>Mensaje enviado con exito</span>");
+                $(".errorInput").fadeOut(6000);      
+                $(".form")[0].reset();
+            }
+        }); 
     });
 
     $contacto.innerHTML=`
@@ -34,13 +47,13 @@ export function Contacto(){
                         <input class="form__input" type="text" name="firstName" id="nombre" placeholder="Nombre" title="Nombre debe contener solo letras y longitud mayor a 3" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\\s]+.{1,15}(.[^0-9])$"required>
                                 
                         <label class="form__label" for="apellido">Apellido:</label>
-                        <input class="form__input"  type="text" name="lastName" id="apellido" placeholder="Apellido" title="Apellido debe contener solo caracteres" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\\s]+.{1,15}(.[^0-9])$" required>
+                        <input class="form__input"  type="text" name="lastName" id="apellido" placeholder="Apellido" title="Apellido debe contener solo letras y longitud mayor a 3" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\\s]+.{1,15}(.[^0-9])$" required>
                                 
                         <label class="form__label" for="mail">Email:</label>
-                        <input class="form__input" type="email" name="email" id="mail" placeholder="Email" title = "Formato  de Email Incorrecto" pattern="^[a-z0-9]+(\\.[_a-z0-9]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,15})$" cmjn<  required>
+                        <input class="form__input" type="email" name="email" id="mail" placeholder="Email" title = "Formato  de Email Incorrecto" pattern="^[a-z0-9]+(\\.[_a-z0-9]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,15})$"  required>
                                 
                         <label class="form__label" for="telefono">Telefono:</label>
-                        <input class="form__input" type="number" name="phone" id="telefono" title=" solo acepta numeros" pattern = ".{6,20}$" placeholder="Telefono" required>
+                        <input class="form__input" type="number" name="phone" id="telefono" title=" solo acepta numeros y longitud mayor a 6" pattern = ".{6,20}$" placeholder="Telefono" required>
                     </section>
                         
                     <section class="form__terminos">
